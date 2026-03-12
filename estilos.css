@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@400;600;800&display=swap");
+
+:root {
+  --color-primario: #2d6a4f;
+  --color-secundario: #52b788;
+  --color-acento: #bc4749;
+  --color-fondo: #fbfbf2;
+  --color-texto: #1f2421;
+  --borde-radio: 8px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+}
+
+/* Tipografías especiales */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: "Merriweather", serif;
+}
+
+/* Navbar Personalizado */
+.navbar-custom {
+  background: linear-gradient(90deg, var(--color-primario) 0%, #1b4332 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar-custom .nav-link {
+  color: white !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+/* MEJORA A11Y: Contraste perfecto para la palabra "Inicio" y enlaces activos */
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+  color: #ffffff !important; 
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  text-shadow: none;
+}
+
+.logo-img {
+  max-width: 250px;
+  height: auto;
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones personalizados */
+/* MEJORA A11Y: Letra oscura obligatoria para cumplir el contraste */
+.btn-custom {
+  background-color: var(--color-secundario);
+  color: #1f2421 !important; 
+  border-radius: 50px;
+  font-weight: 800;
+  transition: transform 0.2s, background-color 0.2s;
+  border: none;
+  min-height: 44px; /* Touch target accesible */
+}
+.btn-custom:hover {
+  background-color: var(--color-primario);
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+/* Tarjetas y Widgets personalizados */
+.custom-card {
+  border: none;
+  border-radius: var(--borde-radio);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+  background: white;
+}
+.custom-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-secundario);
+}
+
+.noticia-card {
+  border-left: 5px solid var(--color-acento);
+}
+
+/* Footer */
+footer {
+  background-color: #1f2421;
+  color: #adb5bd;
+  border-top: 5px solid var(--color-acento);
+}
+footer a {
+  color: var(--color-secundario);
+  text-decoration: none;
+}
+/* MEJORA A11Y: Bootstrap .text-muted usa color oscuro; sobre fondo oscuro del footer no tiene contraste.
+   Se fuerza #adb5bd (ratio 7.5:1 sobre #1f2421) para cumplir WCAG AA (WAVE Contrast Error) */
+footer .text-muted {
+  color: #adb5bd !important;
+}
+
+.cc-icons {
+  width: 150px;
+  opacity: 0.85;
+}
+
+/* ==================================================================
+   MEJORAS DE ACCESIBILIDAD Y USABILIDAD (WCAG 2.1 AA)
+   ================================================================== */
+
+/* MEJORA A11Y: Indicador de foco visible para navegación por teclado */
+*:focus-visible {
+  outline: 3px solid var(--color-secundario);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.navbar-custom .nav-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn:focus-visible,
+.btn-custom:focus-visible {
+  outline: 3px solid var(--color-primario);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(45, 106, 79, 0.25);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 0.25rem rgba(45, 106, 79, 0.25);
+}
+
+.nav-link, .btn, .form-control, .form-select {
+  min-height: 44px;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #95d5b2;
+  text-decoration: underline;
+}
+
+/* MEJORA A11Y: Respeta preferencia de movimiento reducido del usuario */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-section { background-attachment: scroll; }
+  .custom-card:hover { transform: none; }
+  .btn-custom:hover { transform: none; }
+}
+
+.visually-hidden-focusable:focus {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10000;
+  padding: 12px 24px;
+  background-color: var(--color-primario);
+  color: white;
+  font-weight: bold;
+  border-radius: var(--borde-radio);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+caption {
+  caption-side: top;
+  font-weight: 700;
+  color: var(--color-primario);
+  font-size: 1.1rem;
+  padding: 0.75rem 0;
+}

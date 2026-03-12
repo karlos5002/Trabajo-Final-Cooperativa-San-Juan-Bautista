@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - San Juan Bautista</title>
+  <meta name="description" content="Formulario de contacto y ubicación de la Cooperativa San Juan Bautista en Herrera del Duque, Badajoz.">
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <a class="visually-hidden-focusable" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top" aria-label="Navegación principal">
+      <div class="container">
+        
+        <a class="navbar-brand" href="index.html" aria-label="Inicio Cooperativa San Juan Bautista">
+          <img src="img/nuevo-logo.png" alt="Logotipo Cooperativa" class="logo-img bg-white p-1 rounded" style="max-width: 220px;" />
+        </a>
+        
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-3 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="productos.html">Nuestros Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contacto.html">Cooperativa & Contacto</a>
+            </li>
+          </ul>
+          
+          <div class="d-flex align-items-center text-white">
+            <label for="idioma" class="me-2 mb-0 visually-hidden">Idioma:</label>
+            <span class="me-2" aria-hidden="true">🌍</span>
+            <select id="idioma" name="idioma" class="form-select form-select-sm" aria-label="Seleccionar idioma">
+              <option>🇪🇸 Español</option>
+              <option>🇬🇧 English</option>
+            </select>
+          </div>
+        </div>
+        
+      </div>
+    </nav>
+  </header>
+
+  <div class="py-4 text-center text-white mb-5" style="background-color: var(--color-primario);">
+    <div class="container">
+      <h1 class="display-6 fw-bold">Estamos aquí para atenderte</h1>
+    </div>
+  </div>
+
+  <main id="contenido-principal" class="container mb-5">
+    <div class="row g-4">
+      
+      <div class="col-lg-8">
+        <div class="bg-white p-4 p-md-5 rounded shadow-sm border">
+          <h2 style="color: var(--color-primario);" class="mb-3" id="titulo-formulario"><span aria-hidden="true">📩</span> Envíanos un mensaje</h2>
+          <p class="text-muted mb-4">Rellena el siguiente formulario para dudas o reservas. Los campos marcados con <span class="text-danger fw-bold" aria-hidden="true">*</span> son obligatorios.</p>
+
+          <form action="#" method="post" aria-labelledby="titulo-formulario">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="nombre" class="form-label fw-bold">Nombre Completo <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required aria-required="true" autocomplete="name">
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label fw-bold">Correo Electrónico <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="juan@ejemplo.com" required aria-required="true" autocomplete="email">
+              </div>
+              <div class="col-12">
+                <label for="asunto" class="form-label fw-bold">Motivo <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select" id="asunto" name="asunto" required aria-required="true">
+                  <option value="" selected disabled>Elige una opción...</option>
+                  <option value="visita">Solicitar Visita a la Cooperativa</option>
+                  <option value="pedido">Consulta sobre un pedido</option>
+                  <option value="informacion">Información general</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="mensaje" class="form-label fw-bold">Mensaje <span class="text-danger" aria-hidden="true">*</span></label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos qué necesitas..." required aria-required="true"></textarea>
+              </div>
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-custom w-100 py-3 fs-5">Enviar Mensaje</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <aside class="col-lg-4" aria-label="Datos de contacto y ubicación">
+        <div class="custom-card p-4 mb-4 border shadow-sm" style="border-top: 4px solid var(--color-secundario) !important;">
+          <h2 class="h5" style="color: var(--color-primario);"><span aria-hidden="true">📍</span> Nuestra Cooperativa</h2>
+          <p class="mb-3">
+            <strong>Cooperativa San Juan Bautista</strong><br />
+            Calle Principal, s/n<br />
+            06670, Herrera del Duque, Badajoz
+          </p>
+          <hr class="text-muted" />
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><strong><span aria-hidden="true">📞</span> Teléfono:</strong> +34 924 00 00 00</li>
+            <li class="mb-2"><strong><span aria-hidden="true">📧</span> Email:</strong> info@sanjuanbautista.es</li>
+            <li><strong><span aria-hidden="true">⏰</span> Horario:</strong> L-V: 08:00 - 15:00</li>
+          </ul>
+        </div>
+
+        <div class="custom-card p-3 border shadow-sm">
+          <div class="ratio ratio-4x3 rounded overflow-hidden">
+            <iframe src="https://maps.google.com/maps?q=Herrera%20del%20Duque%20Badajoz&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" title="Mapa ubicación cooperativa"></iframe>
+          </div>
+          <p class="text-center small text-muted mt-2 mb-0">Ubicación en Herrera del Duque</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="py-5 text-center">
+    <div class="container">
+      <p class="mb-4">© 2026 Cooperativa San Juan Bautista. El sabor de nuestra tierra.</p>
+      
+      <div>
+        <a rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" aria-label="Licencia Creative Commons (se abre en nueva ventana)" class="text-decoration-none d-inline-block">
+          <img src="img/cc-license.svg" alt="Iconos de la Licencia Creative Commons BY-NC-SA 4.0" class="cc-icons bg-white p-1 rounded mb-1 d-block mx-auto" />
+          <span class="small text-muted text-decoration-underline">CC BY-NC-SA 4.0</span>
+        </a>
+        <p class="small text-muted mt-1 mb-0">Autor: Juan Carlos Cano Carrasco</p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
